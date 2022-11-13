@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #root {
+        margin-bottom: 20px;
+      }
+      td {
+        text-align: center;
+      }
+      #mood {
+        text-align: left;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      background-color: #222222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    "
+  >
+    <div style="display: flex; justify-content: center">
+      <h1 style="color: white">Geolocator - Server</h1>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <p style="color: white">
+        latitude: <span id="latitude"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+      <p style="color: white">longitude: <span id="longitude"></span></p>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <p style="color: white; margin: 0px">Mood: &nbsp;</p>
+      <input type="text" id="mood" />
+      <button id="button" type="button">Send Location</button>
+    </div>
+    <br />
+    <div id="map" style="height: 500px"></div>
+    <br />
+    <div
+      style="display: flex; justify-content: center; background-color: #2b2b2b"
+    >
+      <div style="color: white; width: 80%; margin: 20px" id="database">
+        <table
+          border="1"
+          style="border-collapse: collapse; width: 100%"
+          id="dataTable"
+          cellpadding="10px"
+        >
+          <tr id="heading">
+            <th>Mood</th>
+            <th>Location</th>
+            <th>Timestamp</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="geolocator.js"></script>
+    <script src="fetchTheDatabase.js"></script>
+  </body>
+</html>
