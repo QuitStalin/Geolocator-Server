@@ -3,12 +3,12 @@ const app = express();
 const Datastore = require("nedb");
 const port = 8000;
 
-function response(thing) {
+app.listen(port, () => {
   console.log("Running on port 8000 :>");
-}
-app.listen(port, response());
-//this makes the folder called "sent to the cliend" accessable
-app.use(express.static("sent to the client"));
+});
+
+//this makes the folder called "public" accessable
+app.use(express.static("public"));
 //this enables the server to parse incoming json data, aka
 //you need this line of code to get the "request.body"
 app.use(express.json());
