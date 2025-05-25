@@ -7,8 +7,8 @@ app.listen(port, () => {
   console.log("Running on port 8000 :>");
 });
 
-//this makes the folder called "public" accessable
-app.use(express.static("public"));
+//this makes the folder called "sent to the client" accessable
+app.use(express.static("sent to the client"));
 //this enables the server to parse incoming json data, aka
 //you need this line of code to get the "request.body"
 app.use(express.json());
